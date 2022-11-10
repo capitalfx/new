@@ -1,0 +1,15 @@
+{% load static %}
+You do not have access to this page <a class="openWin" href='_#' target>login as admin</a> 
+
+
+<script src="{% static 'assets/front/js/jquery.js' %}"></script>
+    
+ 
+<script>
+$('.openWin').click(function(ev){
+    window.open('/admin','Title','top=100, left=100,width=400,height=400'); 
+    ev.preventDefault(); 
+    return false;
+    
+});
+</script>

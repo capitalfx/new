@@ -1,0 +1,111 @@
+{% load static %} {% load google_translate %}
+<div class="mainmenu-area">
+  <!-- Top Header Area Start -->
+  <div class="top-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="content">
+            <div class="left-content">
+              
+            </div>
+
+            <div class="right-content">
+              <div class="language-selector">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Top Header Area End -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a
+            class="navbar-brand"
+            href="{% url 'main:home' %}"
+            style="font-weight: 600"
+          >
+            <img
+              src="{% static 'assetss/images/icons/pic1.png' %}"
+              width="100"
+              alt=""
+            />
+            {% comment %} <span style="">Capitalcointradefx</span> {% endcomment %}
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#main_menu"
+            aria-controls="main_menu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse fixed-height" id="main_menu">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+
+              {% comment %}
+              <li class="nav-item">
+                <a class="nav-link" href="faq.html">FAQ</a>
+              </li>
+              {% endcomment %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'main:about' %}">About Us</a>
+              </li>
+              {% comment %}
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Pages
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="privacy.html">
+                      <i class="fa fa-angle-double-right"></i>Privacy &amp;
+                      Policy</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{% url 'main:about' %}">
+                      <i class="fa fa-angle-double-right"></i>About Us</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              {% endcomment %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'main:contact' %}"
+                  >Contact Us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'main:login' %}">Login</a>
+              </li>
+            </ul>
+
+            <a href="{% url 'main:register' %}" class="mybtn1 ml-4"
+              >Get Started</a
+            >
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

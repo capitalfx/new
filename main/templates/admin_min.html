@@ -1,0 +1,162 @@
+{% extends 'base/admin_base.html' %}
+{% block content %}
+<div id="loader"></div>
+{% load static %}
+{% load djmoney %}
+
+<script src="{% static 'assets/front/js/jquery.js' %}"></script>
+    
+<div class="container-fluid">
+    <div class="row">
+        <!-- sidebar -->
+        {% include 'includes/_navtop.html' %}
+        <div class="col-md-9 col-lg-10 ml-md-auto px-0">
+            <!-- top nav -->
+            {% include 'includes/_navadmin.html' %}
+            <!-- main content -->
+            <main class="container-fluid">
+                <section class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <!-- card -->
+                        <article class="p-4 rounded shadow-sm border-left mb-4">
+                            <a href="#" class="d-flex align-items-center">
+                                <span class="bi bi-box h5"></span>
+                                <h5 class="ml-2">Investments ({{invest.count}})</h5>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="p-4 rounded shadow-sm border-left mb-4">
+                            <a href="#" class="d-flex align-items-center">
+                                <span class="bi bi-person h5"></span>
+                                <h5 class="ml-2">Users ({{user.count}})</h5>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="p-4 rounded shadow-sm border-left mb-4">
+                            <a href="#" class="d-flex align-items-center">
+                                <span class="bi bi-person-check h5"></span>
+                                <h5 class="ml-2">Refferals ({{ref.count}})</h5>
+                            </a>
+                        </article>
+                    </div>
+                </section>
+
+                
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="dashboard-inner-content">
+                                <div class="card">
+                                    <h5 class="card-header">All investments({{invest.count}})</h5>
+                                    <div class="card-body">
+                                        <div class="row justify-content-end">
+                                            <div class="col-xl-8">
+                                                <div class="essen-btns">
+                                                    {% if messages %}
+                                    {% for message in messages %}
+                                    <div {% if message.tags %}
+                                        class="alert alert-{{ message.tags }}  alert-dismissible  show" {% endif %}
+                                        role="alert">
+                                        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                                        {{ message }}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    {% endfor %}
+
+                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="table-responsive table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm">
+                                            <table class="table table-striped">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">User</th>
+                                                        <th scope="col">Plan</th>
+                                                        <th scope="col">Amount invested</th>
+                                                        <th scope="col">Amount expected</th>
+                                                        <th scope="col">Status</th>
+                                                        <th scope="col">Pay date</th>
+                                                        <th scope="col">date</th>
+                                                        <th scope="col">Confirm</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for plan in invest %}
+                                                    <tr>
+                                                        <td>{{plan.user.username}}</td>
+                                                        <td>{{plan.plan.name}}</td>
+                                                        <td>${{plan.amount}}</td>
+                                                        <td>${{plan.pay_amount}}</td>
+                                                        
+                                                        <td>
+                                                            {% if plan.confirm %}
+                                                            <span class="badge badge-success">Confirmed</span>
+                                                            {% else %}
+                                                            <span class="badge badge-warning">Processing</span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>{{ plan.payout_date }}</td>
+                                                        <td>{{ plan.date }}</td>
+                                                        <td>
+                                                            {% if plan.confirm %}
+                                                            <button type="button" class="btn btn-secondary conres{{plan.id}}">Reverse</button>
+                                                            <div class="spinner-border conresloader{{plan.id}}" style="display:none;" role="status">
+                                                                <span class="sr-only">Loading...</span>
+                                                              </div>
+                                                            {% else %}
+                                                            <button type="button" class="btn btn-primary conres{{plan.id}}">Confirm</button>
+                                                            <div class="spinner-border conresloader{{plan.id}}" style="display:none;" role="status">
+                                                                <span class="sr-only">Loading...</span>
+                                                              </div>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    <script>
+                                                        $('.conres{{plan.id}}').click(function(e) {  
+                                                            $(".conres{{plan.id}}").hide()
+                                                            $(".conresloader{{plan.id}}").show()
+                                                            $.ajax({
+                                                                type: "post",
+                                                                url: "{% url 'main:adminpage' %}",
+                                                                data: {'id': {{plan.id}}},
+                                                                success: function (response) {
+                                                                    $(".conres{{plan.id}}").show()
+                                                                    $(".conresloader{{plan.id}}").hide()
+                                                                    console.log(response)
+                                                                    window.location.reload()
+                                                                    
+                                                                    
+                                                                },
+                                                                error: function (data) {
+                                                    
+                                                                    console.log(data)
+                                                                },
+                                                            });
+                                                        });
+                                                    </script>
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+               
+            </main>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

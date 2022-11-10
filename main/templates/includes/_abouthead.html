@@ -1,0 +1,33 @@
+{% load static %}
+<section
+  id="page-title"
+  class="page-title bg-overlay bg-overlay-dark bg-parallax"
+>
+  <div class="bg-section">
+    <img
+      src="{% static 'assetss/images/page-titles/5.jpg' %}"
+      alt="Background"
+    />
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="title title-6 text-center">
+          <div class="title--heading">
+            <h1>About Us</h1>
+          </div>
+          <div class="clearfix"></div>
+          <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li><a href="{% url 'main:about' %}">about</a></li>
+            <li class="active">about us</li>
+          </ol>
+        </div>
+        <!-- .title end -->
+      </div>
+      <!-- .col-md-12 end -->
+    </div>
+    <!-- .row end -->
+  </div>
+  <!-- .container end -->
+</section>

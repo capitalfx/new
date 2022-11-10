@@ -1,0 +1,88 @@
+{% extends 'base/new_base.html' %} 
+{% block content %} {% load static %} 
+{% include 'includes/_navbar1.html' %}
+
+<section id="contact1" class="contact contact-1 pt-90 pb-90">
+    <div class="container">
+      <div class="row clearfix">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+          <div class="heading heading-1 mb-50 text--center">
+            
+            <h2 class="heading--title">Welcome! login here</h2>
+            
+          </div>
+        </div>
+        <!-- .col-md-6 end -->
+      </div>
+      <!-- .row end -->
+      <div class="row">
+        <div
+          class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 wow fadeInUp"
+          data-wow-delay="100ms"
+        >
+          <div class="row">
+            <form id="logForm" class="mb-0">
+              {% if messages %}
+              {% for message in messages %}
+              <div {% if message.tags %}
+                  class="alert alert-{{ message.tags }}  alert-dismissible  show" {% endif %}
+                  role="alert">
+                  {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                  {{ message }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              {% endfor %}
+
+              {% endif %}
+              <div class="col-xl-12" id='message'>
+
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <input
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  id="password"
+                  placeholder="password"
+                  required
+                />
+              </div>
+  
+              
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <button
+                  type="submit"
+                  value=""
+                  name="submit"
+                  class="btn btn--primary btn--block"
+                  id="subLogin"
+                >Submit Request</button>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <a class="myLinks" href="{% url 'main:register' %}">Don't have an account? Register</a>
+              </div>
+            </form>
+            <!-- form end -->
+          </div>
+        </div>
+      </div>
+      <!-- .row end -->
+    </div>
+    <!-- .container end -->
+  </section>
+  <!-- #contact1 end -->
+{% include 'includes/_footer.html' %}
+{% include 'includes/_scripts.html' %}
+{% endblock %} 

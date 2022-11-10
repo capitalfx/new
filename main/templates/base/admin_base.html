@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+
+  <head>
+    {% comment %}
+    <script
+      type="text/javascript"
+      id="debugbar_loader"
+      data-time="1636368394"
+      src="index0880.html?debugbar"
+    ></script>
+    <script type="text/javascript" id="debugbar_dynamic_script"></script>
+    <style type="text/css" id="debugbar_dynamic_style"></style>
+    {% endcomment %}
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Capitalcointradefx -- Crypto Currency Trading System - Home</title>
+    <meta
+      name="description"
+      content="Capitalcointradefx -- Crypto Currency Trading System"
+    />
+    <meta property="og:title" content="Capitalcointradefx -- Trading Company" />
+    <meta property="og:url" content="Capitalcointradefx.com" />
+    <meta
+      property="og:description"
+      content="Capitalcointradefx -- Crypto Currency Trading System"
+    />
+    <meta
+      property="og:image"
+      content="% static 'assetss/images/favicon/favicon.png' %}"
+    />
+
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+    <meta property="og:locale:alternate" content="es_ES" />
+
+    <meta name="author" content="danjax" />
+
+    <meta property="og:url" content="Capitalcointradefx.com" />
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- style css -->
+    <!-- favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'assets/images/1563335660service-icon-1.png' %}"
+    />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="{% static 'admincss.css' %}" />
+    <!-- Plugin css -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/front/css/bootstrap.min.css' %}"
+    />
+    <!-- Plugin css -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/front/css/bootstrap.min.css' %}"
+    />
+    <!-- Plugin css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="{% static 'admincss.css' %}" />
+    <link href="{% static 'main.css' %}" rel="stylesheet" />
+  </head>
+
+  <body>
+    {% load google_translate %} {% block content %} {% endblock content %}
+
+    <!-- jquery -->
+    <script src="{% static 'assets/front/js/jquery.js' %}"></script>
+
+    <script src="{% static 'adminjs.js' %}"></script>
+
+    <script type="text/javascript">
+      $(".countdown").each(function () {
+        var date = $(this).data("date");
+        var countDownDate = new Date(date).getTime();
+        var $this = $(this);
+        var x = setInterval(function () {
+          // Get today's date and time
+          var now = new Date().getTime();
+
+          // Find the distance between now and the count down date
+          var distance = countDownDate - now;
+
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          // Display the result in the element with id="demo"
+          var text =
+            days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+          $this.html(text);
+
+          // If the count down is finished, write some text
+          if (distance < 0) {
+            clearInterval(x);
+            var text = 0 + "d " + 0 + "h " + 0 + "m " + 0 + "s ";
+            $this.html(text);
+          }
+        }, 1000);
+      });
+    </script>
+    <script src="{% static 'js/jquery.passwordRequirements.min.js' %}"></script>
+  </body>
+
+  <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+
+  <script id="rendered-js">
+    $(document).ready(() => {
+      $("#open-sidebar").click(() => {
+        // add class active on #sidebar
+        $("#sidebar").addClass("active");
+
+        // show sidebar overlay
+        $("#sidebar-overlay").removeClass("d-none");
+      });
+
+      $("#sidebar-overlay").click(function () {
+        // add class active on #sidebar
+        $("#sidebar").removeClass("active");
+
+        // show sidebar overlay
+        $(this).addClass("d-none");
+      });
+    });
+    //# sourceURL=pen.js
+  </script>
+
+  <script>
+    const phoneInputField = document.querySelector("#regphone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+      utilsScript:
+        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+  </script>
+  <script
+    src="//code.tidio.co/ykeufljwgmsrzhyidx9foxayyqrcgjqq.js"
+    async
+  ></script>
+</html>

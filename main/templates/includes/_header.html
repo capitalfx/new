@@ -1,0 +1,93 @@
+{% load static %}
+{% load google_translate %}
+<header
+  id="navbar-spy"
+  class="header header-1 header-transparent header-bordered header-fixed"
+>
+  <nav id="primary-menu" class="navbar navbar-fixed-top">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#navbar-collapse-1"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="logo" href="/">
+          <img
+            class="logo-light"
+            src="{% static 'assetss/images/icons/pic1.png' %}"
+            alt="Enrmous Logo"
+          />
+          <img
+            class="logo-dark"
+            src="{% static 'assetss/images/icons/pic2.png' %}"
+            alt="Enrmous Logo"
+          />
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse pull-right" id="navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-left nav-pos-right">
+          <!-- Home Menu-->
+          <li
+            class="has-dropdown {% if request.path == '/' %}active{% endif %}"
+          >
+            <a href="/" class="dropdown-toggle menu-item">Home</a>
+          </li>
+          <!-- li end -->
+
+          <!--  Menu-->
+          <li
+            class="has-dropdown {% if request.path == '/about-us/' %}active{% endif %}"
+          >
+            <a href="{% url 'main:about' %}" class="dropdown-toggle menu-item"
+              >About Us</a
+            >
+          </li>
+          <!-- li end -->
+          <!-- Home Menu-->
+          <li
+            class="has-dropdown {% if request.path == '/contact/' %}active{% endif %}"
+          >
+            <a href="{% url 'main:contact' %}" class="dropdown-toggle menu-item"
+              >Contact Us</a
+            >
+          </li>
+          <!-- li end -->
+
+          <!-- Home Menu-->
+          <li class="has-dropdown {% if request.path == '/testimonials/' %}active{% endif %}">
+            <a href="{% url 'main:testimony' %}" class="dropdown-toggle menu-item">Testimonials</a>
+          </li>
+          <li class="has-dropdown {% if request.path == '/Login/' %}active{% endif %}">
+            <a href="{% url 'main:login' %}" class="dropdown-toggle menu-item">Login</a>
+          </li>
+          <li class="has-dropdown ">
+            <a href="#" class="dropdown-toggle menu-item">{% google_translate type='simple' language='en' %}</a>
+          </li>
+          <!-- li end -->
+        </ul>
+        <!-- Module Consultation  -->
+        <div class="module module-consultation pull-left">
+          <a
+            href="{% url 'main:register' %}"
+            class="btn btn--primary btn--bordered btn--rounded"
+            >Get Started</a
+          >
+        </div>
+        <!-- Module Signup  -->
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+</header>

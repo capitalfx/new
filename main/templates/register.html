@@ -1,0 +1,162 @@
+{% extends 'base/new_base.html' %} 
+{% block content %} {% load static %} 
+{% include 'includes/_navbar1.html' %}
+
+<section id="contact1" class="contact contact-1 pt-90 pb-90">
+    <div class="container">
+      <div class="row clearfix">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+          <div class="heading heading-1 mb-50 text--center">
+            
+            <h2 class="heading--title">Welcome! signup here</h2>
+            
+          </div>
+        </div>
+        <!-- .col-md-6 end -->
+      </div>
+      <!-- .row end -->
+      <div class="row">
+        <div
+          class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 wow fadeInUp"
+          data-wow-delay="100ms"
+        >
+          <div class="row">
+            <form id="regForm" class="mb-0">
+              {% if messages %}
+              {% for message in messages %}
+              <div {% if message.tags %}
+                  class="alert alert-{{ message.tags }}  alert-dismissible  show" {% endif %}
+                  role="alert">
+                  {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                  {{ message }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              {% endfor %}
+
+              {% endif %}
+              <div class="col-xl-12" id='message'>
+
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <input
+                  
+                  class="form-control"
+                  type="text" 
+                  class="User Name" 
+                  name='name' 
+                  autocomplete="off"
+                placeholder="First name" 
+                  required
+                />
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <input
+                  
+                  class="form-control"
+                  type="text" 
+                  name='lastname'
+                   
+                  autocomplete="off"
+                placeholder="Last name" 
+                  required
+                />
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <input
+                  
+                  class="form-control"
+                  type="text" 
+                  name="username" 
+                  id="username"
+                placeholder="username"
+                   
+                  autocomplete="off"
+                
+                  required
+                />
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <input
+                  
+                  class="form-control"
+                  type="email" 
+                  name="email"
+                  placeholder="Email Address"
+                  required
+                />
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <input
+                  
+                  
+                  type="password" 
+                  class="form-control Password pr-password" 
+                  name="password"
+                                                        
+                  placeholder="Password" 
+                  id="regpass"
+                  required
+                />
+                <div style=" margin-left: 22px;"
+                                                    id="CheckPasswordMatch1"></div>
+              </div>
+
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <input
+                  
+                  type="password" 
+                  class="form-control Password " 
+                  name="password2"
+                placeholder="Confirm Password" 
+                id="regpass1"
+                  required
+                />
+                <div style=" margin-left: 22px;"
+                                                    id="CheckPasswordMatch"></div>
+              </div>
+
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <label>
+                <input
+                  
+                type="checkbox" id="checkbox" name="accept_terms"
+                value="ptConfirm"
+                />
+                </label>
+                Your Password at Capitalcointradefx are encrypted and you agree to our terms and condition <a
+                                                        target="_blank" href="" class="myLinks">here</a>
+                                                    <a target="_blank" href="#" class="myLinks"></a>
+                
+              </div>
+  
+              
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <span id='checker'></span>
+                <button
+                  type="submit"
+                  value=""
+                  name="submit"
+                  class="btn btn--primary btn--block"
+                  id="regbtn"
+                >Submit Request</button>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12">
+               
+                <a class="myLinks" href="{% url 'main:login' %}">Alreeady have an account?
+                    Login</a>
+              </div>
+            </form>
+            <!-- form end -->
+          </div>
+        </div>
+      </div>
+      <!-- .row end -->
+    </div>
+    <!-- .container end -->
+  </section>
+  <!-- #contact1 end -->
+{% include 'includes/_footer.html' %}
+{% include 'includes/_scripts.html' %}
+{% endblock %} 

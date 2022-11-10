@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+
+  <head>
+    <!-- Document Meta
+    ============================================= -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--IE Compatibility Meta-->
+    <meta name="author" content="zytheme" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta
+      name="description"
+      content="Trusted Crypto Currency Trading & Investment System"
+    />
+    <link href="{% static 'assetss/images/favicon/favicon.png' %}" rel="icon" />
+
+    <!-- Fonts
+    ============================================= -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Exo+2:300i,400,400i,500,500i,600,600i,700%7CRoboto:300i,400,400i,500,500i,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Stylesheets
+    ============================================= -->
+    <link href="{% static 'assetss/css/external.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'assetss/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'assetss/css/style.css' %}" rel="stylesheet" />
+
+    <!-- RS5.0 Main Stylesheet -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'assetss/revolution/css/settings.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'assetss/revolution/css/layers.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'assetss/revolution/css/navigation.css' %}"
+    />
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="assetss/js/html5shiv.js"></script>
+      <script src="assetss/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Document Title
+    ============================================= -->
+    <link
+      rel="stylesheet"
+      href="{% static 'css/jquery.passwordRequirements.css' %}"
+    />
+    <title>
+      Capitalcointradefx | Crypto Currency Trading & Investment System - Home
+    </title>
+    <style>
+      alert {
+        position: relative;
+        padding: 0.75rem 1.25rem;
+        margin-bottom: 1rem;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+      }
+      .alert-heading {
+        color: inherit;
+      }
+      .alert-link {
+        font-weight: 700;
+      }
+      .alert-dismissible {
+        padding-right: 4rem;
+      }
+      .alert-dismissible .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0.75rem 1.25rem;
+        color: inherit;
+      }
+      .alert-primary {
+        color: #004085;
+        background-color: #cce5ff;
+        border-color: #b8daff;
+      }
+      .alert-primary hr {
+        border-top-color: #9fcdff;
+      }
+      .alert-primary .alert-link {
+        color: #002752;
+      }
+      .alert-secondary {
+        color: #383d41;
+        background-color: #e2e3e5;
+        border-color: #d6d8db;
+      }
+      .alert-secondary hr {
+        border-top-color: #c8cbcf;
+      }
+      .alert-secondary .alert-link {
+        color: #202326;
+      }
+      .alert-success {
+        color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+      }
+      .alert-success hr {
+        border-top-color: #b1dfbb;
+      }
+      .alert-success .alert-link {
+        color: #0b2e13;
+      }
+      .alert-info {
+        color: #0c5460;
+        background-color: #d1ecf1;
+        border-color: #bee5eb;
+      }
+      .alert-info hr {
+        border-top-color: #abdde5;
+      }
+      .alert-info .alert-link {
+        color: #062c33;
+      }
+      .alert-warning {
+        color: #856404;
+        background-color: #fff3cd;
+        border-color: #ffeeba;
+      }
+      .alert-warning hr {
+        border-top-color: #ffe8a1;
+      }
+      .alert-warning .alert-link {
+        color: #533f03;
+      }
+      .alert-danger {
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+      }
+      .alert-danger hr {
+        border-top-color: #f1b0b7;
+      }
+      .alert-danger .alert-link {
+        color: #491217;
+      }
+      .alert-light {
+        color: #818182;
+        background-color: #fefefe;
+        border-color: #fdfdfe;
+      }
+      .alert-light hr {
+        border-top-color: #ececf6;
+      }
+      .alert-light .alert-link {
+        color: #686868;
+      }
+      .alert-dark {
+        color: #1b1e21;
+        background-color: #d6d8d9;
+        border-color: #c6c8ca;
+      }
+      .alert-dark hr {
+        border-top-color: #b9bbbe;
+      }
+      .alert-dark .alert-link {
+        color: #040505;
+      }
+      .myLinks {
+        color: #ffb400;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 29px;
+      }
+    </style>
+  </head>
+
+  <body>
+    {% load google_translate %}
+    <div class="preloader">
+      <div class="signal"></div>
+    </div>
+    <!-- Document Wrapper
+	============================================= -->
+    <div id="wrapper" class="wrapper clearfix">
+      {% block content %} {% endblock content %}
+
+      <div id="back-to-top" class="backtop">
+        <i class="fa fa-long-arrow-up"></i>
+      </div>
+    </div>
+    <!-- #wrapper end -->
+
+    <!-- Footer Scripts
+============================================= -->
+    <script src="{% static 'assetss/js/jquery-2.2.4.min.js' %}"></script>
+    <script src="{% static 'assetss/js/plugins.js' %}"></script>
+
+    <script src="{% static 'assetss/js/bitcoinTracker.js' %}"></script>
+    <script src="{% static 'assetss/js/bitcoinPrice.js' %}"></script>
+    <script src="{% static 'assetss/js/bitcoinPriceWidgets.js' %}"></script>
+    <script src="assetss/js/widgets.html"></script>
+    <script src="{% static 'assetss/js/functions.js' %}"></script>
+    <!-- RS5.0 Core JS Files -->
+    <script src="{% static 'assetss/revolution/js/jquery.themepunch.tools.min838f.js' %}"></script>
+    <script src="{% static 'assetss/revolution/js/jquery.themepunch.revolution.min838f.js' %}"></script>
+    <script src="{% static 'assetss/revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+    <script src="{% static 'assetss/revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+    <script src="{% static 'assetss/revolution/js/extensions/revolution.extension.actions.min.js' %}"></script>
+    <script src="{% static 'assetss/revolution/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+    <script src="{% static 'assetss/revolution/js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+    <script src="{% static 'assetss/revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+    <script src="{% static 'assetss/revolution/js/extensions/revolution.extension.migration.min.js' %}"></script>
+    <script src="{% static 'assetss/revolution/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+    <!-- RS Configration JS Files -->
+    <script src="{% static 'assetss/js/rsconfig.js' %}"></script>
+    <script src="{% static 'js/jquery.passwordRequirements.min.js' %}"></script>
+  </body>
+
+  <script
+    src="//code.tidio.co/ykeufljwgmsrzhyidx9foxayyqrcgjqq.js"
+    async
+  ></script>
+</html>

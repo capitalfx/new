@@ -1,0 +1,119 @@
+{% extends 'base/admin_base.html' %}
+{% block content %}
+<div id="loader"></div>
+{% load static %}
+{% load djmoney %}
+
+<script src="{% static 'assets/front/js/jquery.js' %}"></script>
+    
+<div class="container-fluid">
+    <div class="row">
+        <!-- sidebar -->
+        {% include 'includes/_navtop.html' %}
+        <div class="col-md-9 col-lg-10 ml-md-auto px-0">
+            <!-- top nav -->
+            {% include 'includes/_navadmin.html' %}
+            <!-- main content -->
+            
+                    <!--Dashboard area-->
+
+        <div class="container">
+            <div class="row">
+               
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <div class="dashboard-content">
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                <div class="dashboard-inner-content">
+                                    <div class="card">
+                                        <h5 class="card-header">Invest Form</h5>
+                                        <div class="card-body">
+                                            <form action="#" id="adminemail">
+                                                <div class="row">
+                                                    
+                                                   
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                                        <label for="a-trans">Email to:</label>
+                                                        <input  type="email" name="email" value="" id="a-trans" required>
+                                                    </div>
+                                                  
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                                        <label for="a-trans">Email subject: </label>
+                                                        <input  type="text" name="subject" value="" id="a-trans" required>
+                                                    </div>
+                                                    
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"><grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="mix-blend-mode: darken; position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension>
+                                                        <label for="textareagsd">Message</label>
+                                                        <textarea name="des" rows="4" id="textareagsd" required="" placeholder="Enter message" spellcheck="true"></textarea>
+                                                    </div>
+                               
+                                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                                       <button id="sendbtn" type="submit">Send email</button>
+                                                       <div class="spinner-border conresloader" style="display:none;" role="status">
+                                                        <span class="sr-only">Loading...</span>
+                                                      </div>
+                                                    </div>
+                                                    
+
+                                                    <div id="messageplace" class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            $('#adminemail').submit(function(e) {  
+                                e.preventDefault();
+                                $("#sendbtn").hide()
+                                $(".conresloader").show()
+
+                                var $inputs = $('#adminemail :input');
+                                
+                                // not sure if you wanted this, but I thought I'd add it.
+                                // get an associative array of just the values.
+                                var values = {};
+                                $inputs.each(function() {
+                                    values[this.name] = $(this).val();
+                                    console.log(values[this.name])
+                                });
+
+                                $.ajax({
+                                    type: "post",
+                                    url: "{% url 'main:adminmail' %}",
+                                    data: values,
+                                    success: function (response) {
+                                        $("#sendbtn").show()
+                                        $(".conresloader").hide()        
+                                        console.log(response)
+                                        window.location.reload()
+                                        
+                                        
+                                    },
+                                    error: function (data) {
+                        
+                                        console.log(data)
+                                    },
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
