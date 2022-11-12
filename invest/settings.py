@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-j8jbxn*)8vf(!w_3id@t7q#=ycl=h3rh5d3#ats-fn0%kdo+a$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['capitalcointradefx.com','www.capitalcointradefx.com', 'capitalcointrade.herokuapp.com', 'www.capitalcointrade.herokuapp.com','127.0.0.1', 'maximcoinfx.herokuapp.com', 'www.maximcoinfx.com', 'maximcoinfx.com']
+ALLOWED_HOSTS = ['34.205.16.78','capitalcointradefx.com','www.capitalcointradefx.com', 'capitalcointrade.herokuapp.com', 'www.capitalcointrade.herokuapp.com','127.0.0.1', 'maximcoinfx.herokuapp.com', 'www.maximcoinfx.com', 'maximcoinfx.com']
 
 
 # Application definition
